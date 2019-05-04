@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TejasDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\PROJECTS\TEJAS AYURVEDA\ACCOUNTSOFTWARE\ACCOUNTSOFTWARE\TEJASDATABASE.MDF.dbo.TejasAccount' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TejasAccount">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="30" />
+    <Property Name="ClientName" Type="varchar" MaxLength="40" />
+    <Property Name="Phone" Type="varchar" MaxLength="30" />
+    <Property Name="ClientMail" Type="varchar" MaxLength="40" />
+    <Property Name="ProductAmount" Type="varchar" MaxLength="50" />
+    <Property Name="DispatchDate" Type="varchar" MaxLength="100" />
+    <Property Name="ClientAddress" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityContainer Name="TejasDatabaseModelStoreContainer">
+    <EntitySet Name="TejasAccount" EntityType="Self.TejasAccount" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TejasAccount].[Sno] AS [Sno], 
+    [TejasAccount].[ProductName] AS [ProductName], 
+    [TejasAccount].[ClientName] AS [ClientName], 
+    [TejasAccount].[Phone] AS [Phone], 
+    [TejasAccount].[ClientMail] AS [ClientMail], 
+    [TejasAccount].[ProductAmount] AS [ProductAmount], 
+    [TejasAccount].[DispatchDate] AS [DispatchDate], 
+    [TejasAccount].[ClientAddress] AS [ClientAddress]
+    FROM [dbo].[TejasAccount] AS [TejasAccount]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
